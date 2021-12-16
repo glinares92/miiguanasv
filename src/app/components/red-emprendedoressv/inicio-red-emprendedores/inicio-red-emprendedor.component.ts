@@ -58,6 +58,7 @@ export class InicioRedEmprendedorComponent implements OnInit {
       // Obtener Departamentos
       this.redProveedorService.getDepartamentos(this.request).subscribe((deptos: Departamento[]) => {
         this.departamentos = deptos;
+        
       });
       // Obtener Tipo Proveedor
       this.redProveedorService.getTipoproveedor(this.request).subscribe((tiprov: Tipoproveedor) => {

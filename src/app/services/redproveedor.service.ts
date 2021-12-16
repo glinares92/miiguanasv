@@ -40,8 +40,8 @@ export class RedproveedorService {
     return this.httpClient.post(environment.sisa.conectar, this.requestConectar, this.httpOptions);
   }
 
-  getDepartamentos(request: BuscarProveedor ) {
-    return this.httpClient.post(environment.sisa.getDepartamento, request, this.httpOptions);
+  getDepartamentos(request2: BuscarProveedor ) {
+    return this.httpClient.post(environment.sisa.getDepartamento, request2, this.httpOptions);
   }
 
   getTipoproveedor(request: BuscarProveedor) {

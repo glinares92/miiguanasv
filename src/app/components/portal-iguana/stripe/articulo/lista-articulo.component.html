@@ -7,13 +7,26 @@
   <div class="card-columns container" >
 
     <div class="card" *ngFor="let articulo of articulos">
-      <img src="..." class="card-img-top" alt="...">
+      <img src="https://images.pexels.com/photos/38271/ipad-map-tablet-internet-38271.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">{{articulo.nombre}}</h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content. {{articulo.precio / 10}}</p>
-        <p class="card-text"><small class="text-muted"><button class="btn btn-outline-info" routerLink="/detalle/{{articulo.id}}"  >Comprar</button></small></p>
+        <h3 class="card-title">{{articulo.nombre}}</h3>
+        <p class="card-text">Solicita nuestro <b>{{articulo.nombre}}</b> por el costo de  <b>${{articulo.precio / 10}}.00</b> gestiona, administra, publicalos para que todos te contacten</p>
+        <button class=" btn btn-primary btn-blue-primary3  flex-fill flex-sm-fill align-self-start btn-azul" routerLink="/detalle/{{articulo.id}}"  ><i class="fab fa-cc-stripe"></i> Comprar</button>
       </div>
     </div>
+
+    
+    <div class="card">
+      <img src="https://images.pexels.com/photos/38271/ipad-map-tablet-internet-38271.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h3 class="card-title">DONACIONES</h3>
+        <p class="card-text">Tambien puedes donar a nuestro proyecto, asi puedes ayudar a miles de emprendedores</p>
+        <a  href="https://buy.stripe.com/test_4gw9Bx8hKe5d1KU5kl" target="blank"
+          class=" btn btn-primary btn-blue-primary3  flex-fill flex-sm-fill align-self-start btn-azul" alt="Cotizadores">
+          <i class="fab fa-cc-stripe"></i> DONA AQUI</a>
+      </div>
+    </div>
+ 
   
   </div>
 

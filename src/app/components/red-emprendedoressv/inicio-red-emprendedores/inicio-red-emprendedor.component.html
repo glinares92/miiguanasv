@@ -25,6 +25,7 @@
                   </option>
                   <option *ngFor="let deptos of departamentos" [value]="deptos.codEstado">{{deptos.nombre}}</option>
                 </select>
+                <strong *ngIf="!departamentos">error</strong>
               </div>
             </div>
 
