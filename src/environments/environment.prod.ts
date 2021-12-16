@@ -10,11 +10,6 @@ export const environment = {
   //   usuarios: 'http://localhost:8080/api/sva/usuarios',
   // },
 
-
-  // dialogFlow: {
-  //   miguanabot: 'https://accounts.google.com/o/oauth2/auth'
-  // },
-
   miiguana: {
     conectar: 'https://dockerapi-miiguana.azurewebsites.net/oauth/token',
     departamentos: 'https://dockerapi-miiguana.azurewebsites.net/api/sv/departamentos',
