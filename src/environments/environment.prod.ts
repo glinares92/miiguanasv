@@ -74,7 +74,7 @@ export const environment = {
 
 
   sisa: {
-    conectar: 'https://www.sisa.com.sv/SISAServiceRest/api/v1/conectar',
+    conectar: 'https://www.sisa.com.sv/SISAServiceRest/api/v1/conec',
     getDepartamento: 'https://www.sisa.com.sv/SISAServiceRest/api/v1/departamentos',
     getTipoproveedor: 'https://www.sisa.com.sv/SISAServiceRest/api/v1/tipoproveedor',
     getEspecialidada: 'https://www.sisa.com.sv/SISAServiceRest/api/v1/especialidades',
