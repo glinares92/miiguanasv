@@ -1,14 +1,6 @@
 export const environment = {
   production: true,
 
-  // miiguana: {
-  //   conectar: 'http://localhost:8080/oauth/token',
-  //   departamentos: 'http://localhost:8080/api/sv/departamentos',
-  //   rubro: 'http://localhost:8080/api/sv/negocios',
-  //   emprendedores: 'http://localhost:8080/api/sv/emprendedores',
-  //   crearempr: 'http://localhost:8080/api/sv/emprendedores',
-  //   usuarios: 'http://localhost:8080/api/sva/usuarios',
-  // },
 
   miiguana: {
     conectar: 'https://dockerapi-miiguana.azurewebsites.net/oauth/token',
@@ -23,45 +15,6 @@ export const environment = {
     stripeCancel: 'https://dockerapi-miiguana.azurewebsites.net/stripe/cancel/',
     stripePagar: 'https://dockerapi-miiguana.azurewebsites.net/stripe/paymentintent'
   },
-
-
-
-
-  // https://dockerapi-miiguana.azurewebsites.net/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
