@@ -1,0 +1,53 @@
+
+<form >
+
+  <div class="row">
+    <div class="col-md-6">
+      <mat-form-field style="width: 100%">
+        <input matInput placeholder="Escribe tu correo" [formControl]="emailFormControl"/>
+        <mat-error *ngIf="emailFormControl.hasError('email')">
+          Por favor ingrea un correo valido
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Correo es requerido <strong>requerido</strong>
+        </mat-error>
+      </mat-form-field>  
+    </div>
+
+    <div class="col-md-6">
+      <mat-form-field style="width: 100%">
+        <input matInput placeholder="Escribe tu nombre" [formControl]="nameFormControl" />
+        <mat-error *ngIf="nameFormControl.hasError('minlength')">
+          Tu nombre tiene menos de 4 caracteres, por favor ingresa tu nombre
+        </mat-error>
+        <mat-error *ngIf="nameFormControl.hasError('required')">
+          Tu nombre es requerido<strong>requerido</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-12">
+      <mat-form-field style="width: 100%">
+        <input matInput placeholder="Escribe el mensaje que nos quieres hacer llegar" [formControl]="cuerpoFormControl" />
+        <mat-error *ngIf="cuerpoFormControl.hasError('minlength')">
+          Tu mensaje para nosotros tiene menos de 4 caracteres
+        </mat-error>
+        <mat-error *ngIf="cuerpoFormControl.hasError('required')">
+          Tu mensaje es requerido <strong>requerido</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+
+
+    <button
+      mat-raised-button
+      [disabled]="emailFormControl.invalid || nameFormControl.invalid || loading"
+      color="primary"
+      (click)="enviarMail()"
+    >
+      Enviar
+    </button>
+
+</form>
+

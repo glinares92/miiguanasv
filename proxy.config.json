@@ -1,0 +1,7 @@
+{
+    "/api/v1/*":{
+        "target": "https://www.sisa.com.sv/SISAServiceRest",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

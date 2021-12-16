@@ -1,0 +1,119 @@
+
+  <p class="separador"></p>
+  <p class="separador"></p>
+<div class="container carousel">
+
+  <div class="card">
+    <div class="card-header">Crear Emprendores</div>
+    <div class="card-body">
+
+
+
+      <form >
+ 
+        <div class="form-group row">
+          <label for="nomEmp" class="col-form-label col-sm-2">Nombre</label>
+          <div class="col-md-6">
+            <input type="text" class="form-control" [(ngModel)]="emprendedor.nomEmp" name="nomEmp">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="apeEmp" class="col-form-label col-sm-2">Apellido</label>
+          <div class="col-md-6">
+            <input type="text" class="form-control" [(ngModel)]="emprendedor.apeEmp" name="apeEmp">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="telefono" class="col-form-label col-sm-2">Telefono</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="emprendedor.telefono" name="telefono">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="email" class="col-form-label col-sm-2">Email</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="emprendedor.email" name="email">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="whatsapp" class="col-form-label col-sm-2">WhatsApp</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="emprendedor.whatsapp" name="whatsapp">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="duiEmp" class="col-form-label col-sm-2">DUI</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="emprendedor.duiEmp" name="duiEmp">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="nitEmp" class="col-form-label col-sm-2">NIT</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="emprendedor.nitEmp" name="nitEmp">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="nomNegocio" class="col-form-label col-sm-2">Nombre Negocio</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="emprendedor.nomNegocio" name="nomNegocio">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="latitude" class="col-form-label col-sm-2">Latitud</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="emprendedor.latitude" name="latitude">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="longitude" class="col-form-label col-sm-2">Longitud</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="emprendedor.longitude" name="longitude">
+          </div> 
+        </div>
+        <div class="form-group row">
+          <label for="direccion" class="col-form-label col-sm-2">Direccion</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="emprendedor.direccion" name="direccion">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="direccionGm" class="col-form-label col-sm-2">Direccion Google Maps</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="emprendedor.direccionGm" name="direccionGm">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="codDep" class="col-form-label col-sm-2">Departamento</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="emprendedor.codDep" name="codDep">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="codNeg" class="col-form-label col-sm-2">Rubro</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="emprendedor.codNeg" name="codNeg">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <button class="btn btn-primary" (click)="create()" *ngIf="!emprendedor.codEmp else elseBlock" role="button">Crear</button>
+            <ng-template #elseBlock>
+              <button class="btn btn-primary" (click)="updateEmprededor()" role="button">Editar</button>
+            </ng-template>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+
+

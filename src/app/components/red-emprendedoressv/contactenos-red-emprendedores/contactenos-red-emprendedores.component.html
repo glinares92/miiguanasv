@@ -1,0 +1,40 @@
+<app-bannerpri></app-bannerpri>
+
+
+
+<div class="container animated fadeIn fast">
+  <div class="card">
+    <h5 class="primario colorsecundario card-header"><i class="iconos fas fa-user-md"></i><b>&nbsp;&nbsp;</b>Mi Iguana SV Escribenos</h5>
+    <div class="card-body">
+      <envio-mail></envio-mail>
+      <br>
+      <div class="card">
+        <h5 class="primario colorsecundario card-header">
+          <i class="iconos fas fa-map-marked-alt"></i> Localización para,
+          Mi Iguana SV</h5>
+
+          
+        <agm-map [latitude]="iguana?.latitude" [longitude]="iguana?.longitude" [zoom]='iguana?.zoom'>
+ 
+          <agm-marker *ngFor="let sis of iguana?.mapa; let i = index " [latitude]="sis?.latitude"
+            [longitude]="sis?.longitude" [iconUrl]="sis?.pin">
+            <agm-info-window>
+              <strong>
+                <p><i class="fa fa-phone-square" aria-hidden="true"></i><b> Telefono: </b><a
+                    href="tel:{{sis?.telefono}}">{{sis?.telefono}}</a></p>
+                <p><i class="fas fa-envelope-open"></i><b> Email: </b><a href="mailto:{{sis?.email}}">{{sis?.email}}</a>
+                </p>
+                <p><i class="fas fa-map-marked-alt"></i><b> Dirección: </b>{{sis?.direccion}}</p>
+                <p class="card-text"><i class="fasdir fas fa-map-marked-alt"></i><b> Dirección: </b><a
+                    [href]="sis?.comollegar" target="_blank">Como Llegar</a></p>
+              </strong>
+            </agm-info-window>
+          </agm-marker>
+        </agm-map>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

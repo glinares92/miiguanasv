@@ -1,0 +1,60 @@
+
+
+
+
+<app-bannerpri></app-bannerpri>
+
+<lista-articulo><lista-articulo>
+
+
+<div class="container">
+  <div class="card">
+    <h5 class="primario colorsecundario card-header"><i class="iconos fas fa-user-md"></i><b>&nbsp;&nbsp;</b>Mi Iguana SV</h5>
+    <div class="card-body">
+      <div class="card-columns">
+        
+      </div>
+      <br>
+      <div class="card">
+        <h5 class="primario colorsecundario card-header">
+          <i class="iconos fas fa-map-marked-alt"></i> Localización para,
+          Mi Iguana SV</h5>
+
+   
+
+          
+        <agm-map *ngIf="emprendedoresagm"
+          [latitude]="emprededor?.longitude" 
+          [longitude]="emprededor?.longitude" 
+          [zoom]='zoom'
+          >
+
+          <agm-marker [latitude]="lati"
+            [longitude]="longi" [iconUrl]="pin2">
+            <agm-info-window>
+              <strong>
+                <i class="fa fa-phone-square" aria-hidden="true"></i><b>Aqui me encuentro</b><br>
+              </strong>
+            </agm-info-window>
+          </agm-marker>
+
+          <agm-marker *ngFor="let emprededor of emprendedoresagm; let i = index" [latitude]="emprededor?.latitude"
+            [longitude]="emprededor?.longitude" [iconUrl]="pin">
+            <agm-info-window>
+              <strong>
+                <i class="fa fa-phone-square" aria-hidden="true"></i><b> Telefono: {{emprededor?.telefono}} </b><br>
+              </strong>
+            </agm-info-window>
+          </agm-marker>
+
+          
+          
+
+        </agm-map>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,35 @@
+<app-bannerpri></app-bannerpri>
+
+
+<p class="separador carousel"></p>
+<div class="carousel">
+
+  <p></p>
+
+  <div class="card-columns container" >
+
+    <div class="card" *ngIf="articulo">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{articulo.nombre}}</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content. {{articulo.precio / 10}}</p>
+
+      </div>
+      <div class="card-body">
+        <payment
+        nombre = "{{articulo.nombre}}"
+        precio = "{{articulo.precio}}"
+        descripcion = "{{articulo.descripcion}}"
+        >
+
+        </payment>
+      </div>
+    </div>
+  
+  </div>
+
+</div>
+
+
+
+

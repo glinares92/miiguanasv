@@ -1,0 +1,170 @@
+agm-map{
+  height: 400px !important;
+}
+
+.container{
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+}
+
+.chtitulo{
+  font-size: 27px;
+}
+
+.regresar{
+  position: right;
+
+
+}
+
+.banner{
+  margin-top: 66px;
+}
+
+.regresar{
+  float: right;
+  background-color: #1d4a7d;
+  border-color: #1d4a7d;
+  margin-top: 2px;
+      margin-left: -40px;
+}
+
+.marcacard{
+  background-color: #1d4a7d;
+}
+
+.area{
+   background-color: #01adf0
+}
+
+
+.fastitulo{
+color: #34495e;
+font-size: 28px;
+}
+
+.fastel{
+  color: #34495e;
+  font-size: 18px;
+}
+
+.fasemail{
+  color: #34495e;
+  font-size: 18px;
+}
+
+.fasdir{
+color: #34495e;
+font-size: 18px;
+}
+
+.fasmapa{
+  color: #34495e;
+  font-size: 28px;
+}
+
+.card-text{
+  color: #34495e;
+}
+
+
+@media (min-width: 36em) {
+        .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media (min-width: 48em) {
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+      .banner-img {
+    border-radius: 0px !important;
+
+}
+}
+
+@media (min-width: 62em) {
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+      .banner-img {
+    border-radius: 0px !important;
+
+}
+}
+
+  @media (min-width: 70em) {
+  .card-columns {
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      column-count: 3;
+  }
+
+    .banner-img {
+    border-radius: 0px !important;
+
+}
+}
+
+@media (min-width: 78em) {
+  .card-columns {
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      column-count: 3;
+  }
+
+    .banner-img {
+    border-radius: 0px !important;
+
+}
+}
+
+@media (min-width: 80em) {
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+
+      .banner-img {
+    border-radius: 0px !important;
+
+}
+}
+
+
+@media (min-width: 86em) {
+    .card-columns {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+    }
+
+      .banner-img {
+    border-radius: 0px !important;
+
+}
+}
+
+
+@media (min-width: 96em) {
+        .card-columns {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+    }
+}
+

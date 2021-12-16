@@ -1,0 +1,38 @@
+:root {
+--colorAzulPrimario1:   #163253 !important;
+--colorAzulPrimario2:   #1d4a7d !important;
+--colorAzulPrimario3:   #135fa7 !important;
+--colorAzulPrimario4:   #2a88e3 !important;
+
+--colorGrisPrimario1:   #d1d6d9 !important;
+--colorGrisPrimario2:   #a7b1b7 !important;
+--colorGrisPrimario3:   #424649 !important;
+--colorGrisPrimario4:   #5a6063 !important;
+
+--colorDoradoPrimario1: #8f7049 !important;
+--colorDoradoPrimario2: #b7976b !important;
+--colorDoradoPrimario3: #c7af8f !important;
+--colorDoradoPrimario4: #d0bb9f !important;
+
+--colorOpcional1:       #50448a !important;
+--colorOpcional2:       #50448a !important;
+--colorOpcional3:       #fc601f!important;
+--colorOpcional4:       #f99106 !important;
+
+
+--colorVerdeConfirmacion: #30a64a !important;
+--colorRojoError:         #ea2440 !important;
+--colorAmarilloAlerta:    #fcc02f !important;
+--colorNegroTipografia:   #212324 !important;
+--Background:             #ffffff !important;
+--colorBlanco:            #ffffff !important;
+
+
+--Otros:               #309fb0 !important;
+--Auto:                #154995 !important;
+--Hogar:               #4789b6 !important;
+--Salud:               #ff5f4e !important;
+--Disclaimer:          #00adef !important;
+--colorNegro:          #212324 !important;
+--colorAuto:           #6892ba !important;
+}

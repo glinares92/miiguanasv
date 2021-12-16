@@ -1,0 +1,58 @@
+<div class="container-flui carousel">
+
+  <div class="row">
+
+
+    <div class="col-md-6" id="grad1">
+
+    </div>
+
+
+
+    <!-- formulario login -->
+    <div class="col-md-6">
+
+
+      <div class="card logincard">
+        <div class="card-header">
+         <b> Iniciar Sesión <i class="fas fa-user-astronaut"></i></b>
+        </div>
+
+
+        <div class="card-body">
+
+          <form method="post">
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="username" class="form-label">Usuario de Emprendedor</label>
+                <input [(ngModel)]="usuario.username" type="email" class="form-control" name="username" id="username" placeholder="iguana92" autofocus required>  
+              </div>
+              <div class="form-group col-md-12">
+                <label for="inputPassword" class="form-label">Contraseña</label>
+                <input [(ngModel)]="usuario.password" type="password" class="form-control" placeholder="Contraseña" name="password" id="password" required>
+              </div>
+              <p></p>
+    
+              <div class="form-group col-md-6" style="margin: auto !important;">
+                <input (click)='login()'   type="submit" value="Iniciar Sesión"  class="btn btn-blue-primary1" style="color: aliceblue;">
+              </div>
+
+
+              <div class="form-group col-md-6" style="margin: auto !important;">
+                <a  class="btn btn-blue-primary1" style="color: aliceblue;" routerLink="/registrate">Registrate</a>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+
+      
+    </div>
+
+
+
+  </div>
+
+
+</div>

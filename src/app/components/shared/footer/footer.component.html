@@ -1,0 +1,55 @@
+<section>
+  <div class="container-3 seccionTitulo">
+    Estamos a tu disponilidad
+  </div>
+</section>
+
+
+
+<section class="seccionLinkExternos">
+      <nav class="container rounded navbar-expand-xl rounded">
+      <ul class="navbar-nav mr-auto centrado">
+
+          <a class="navbar-brand"  [routerLink]="['inicio']">
+            <img src="assets/img/logo.svg" width="100" height="45" alt="">
+          </a>
+
+          <li class="nav-item" routerLinkActive="active">
+            <a class="colorsecundario navitem-2 nav-link" routerLink="/inicio">
+              De regreso al inicio<span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item" routerLinkActive="active">
+            <a class="colorsecundario navitem-2 nav-link" routerLink="/redemprendedores">
+              Emprendedores<span class="sr-only">(current)</span></a>
+          </li>
+
+      <li class="nav-item" routerLinkActive="active">
+      <a class="colorsecundario navitem-2 nav-link" [routerLink]="['/red-emprendedores/contactanos']"
+      >Contáctanos <span class="sr-only">(current)</span></a>
+      </li>
+
+          <li class="nav-item" routerLinkActive="active">
+            <a class="colorsecundario navitem-2 nav-link" [routerLink]="['privacidad']">
+              Privacidad <span class="sr-only">(current)</span></a>
+          </li>
+
+
+      <li class="nav-item rcambio pointer" routerLinkActive="active" (click)="activarRegistroComercializadores()">
+      <a class="colorsecundario navitem-2 nav-link">
+      • Portal Administrativo<br> &nbsp;&nbsp; publica tu negocio <span class="sr-only">(current)</span></a>
+      </li>
+      </ul>
+      </nav>
+</section>
+
+
+
+<section>
+  <div class="container-3 seccionTitulo">
+    Derechos Reservados, Mi Iguana SV {{hoy | date:'y'}}
+  </div>
+</section>
+
+
+

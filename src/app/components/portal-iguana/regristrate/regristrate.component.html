@@ -1,0 +1,80 @@
+<div class="container-flui carousel">
+
+  <div class="row">
+
+
+    <div class="col-md-6" id="grad1">
+
+    </div>
+
+
+
+    <!-- formulario login -->
+    <div class="col-md-6">
+
+
+      <div class="card logincard">
+        <div class="card-header">
+         <b> Registrate con nosotros <i class="fas fa-user-astronaut"></i></b>
+        </div>
+
+
+        <div class="card-body">
+          <!-- REGISTRO DE EMPRENDEDOR -->
+          <form >
+            <div class="form-row">
+              <div class="form-group row col-md-6">
+                <label for="nombre">Nombre</label>
+                <input type="text" placeholder="Jose" name="nombre" [(ngModel)]="registrar.nombre" class="form-control">
+              </div>
+              <div class="form-group row col-md-6">
+                <label for="apellido">Apellido</label>
+                <input type="text" placeholder="Ramirez" [(ngModel)]="registrar.apellido"  name="apellido" class="form-control">
+              </div>
+              <div class="form-group row col-md-6">
+                <label for="email">Email</label>
+                <input type="email" placeholder="ejemplo10000@outlook.com"  [(ngModel)]="registrar.email" name="email"  class="form-control">
+              </div>
+              <div class="form-group row col-md-6">
+                <label for="telefono">Telefono</label>
+                <input type="tel" placeholder="77776662326" [(ngModel)]="registrar.telefono" name="telefono" class="form-control">
+              </div>
+              <div class="form-group row col-md-12">
+                <label for="nombrenegocio">Nombre Negocio</label>
+                <input type="text" placeholder="Taller Flores" [(ngModel)]="registrar.nombrenegocio" name="nombrenegocio"  class="form-control">
+              </div>
+              <div class="form-group row col-md-6">
+                <label for="username">Usuario</label>
+                <input type="text" placeholder="jramirez92" [(ngModel)]="registrar.username" name="username"  class="form-control">
+              </div>
+              <div class="form-group row col-md-6">
+                <label for="password">Contraseña</label>
+                <input type="password" [(ngModel)]="registrar.password" name="password"  class="form-control">
+              </div>
+
+
+              <div class="form-group row  col-md-5">
+                <button class="btn btn-blue-primary1" (click)="registrarUsuario()" role="button" style="color: aliceblue;">Registrate</button>
+              </div>
+              <div class="form-group  col-md-5">
+                <a [routerLink]="['/login']" class="btn btn-blue-primary1" style="color: aliceblue;">Regresar</a>
+              </div>
+
+            </div>
+
+
+              
+            
+          </form>
+
+          
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,30 @@
+
+
+#grad1 {
+    background-image: url(/assets/imagenes/registrar.jpg) !important;
+    height: 700px;
+    background-color: #cccccc;
+    background-image: linear-gradient(rgba(0, 110, 255, 0.329), rgba(95, 95, 79, 0.404), rgb(64, 70, 64));
+  }
+
+  .row {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    
+}
+
+.logincard{
+    margin-top: 10px !important;
+    width: 80% !important;
+    margin-left: 10% !important;
+    
+}
+
+
+.card-header{
+    background-color: #1d4a7d !important;
+    color: white !important;
+}

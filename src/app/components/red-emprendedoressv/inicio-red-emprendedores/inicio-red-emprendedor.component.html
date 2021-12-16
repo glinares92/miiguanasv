@@ -1,0 +1,162 @@
+<app-bannerpri></app-bannerpri>
+
+<div class="container-fluid  diseno animated fadeIn fast">
+
+  <form class="" (ngSubmit)="buscarProveedores()" #frmBuscar="ngForm">
+    <div class="tabla form-row">
+
+      <div class="sticky-top form-group col-md-4">
+
+        <div class="cardformlario card" *ngIf="buscar">
+          <h6 class="primario colorsecundario prin card-header"><i class="iconos fas fa-user-md"></i>&nbsp;Red de Emprendedores
+          </h6>
+          <div class="card-body">
+
+
+            <div class="form-row" *ngIf="buscar">
+              <div class="form-group custom-file">
+                <label class="formulario" for="filterDep"> Departamento
+                </label>
+                <select class="form-control custom-select" name="codDepartamento"
+                  [(ngModel)]="formulario.codDepartamento" required (change)="limpiarDepartamento()"
+                  (change)="buscarProveedores()"
+                  [ngClass]="{'required-field': !formulario.codDepartamento, 'valid-field': formulario.codDepartamento}">
+                  <option hidden="deptos.codEstado !== ''" disabled selected value="">Selecciona el departamento
+                  </option>
+                  <option *ngFor="let deptos of departamentos" [value]="deptos.codEstado">{{deptos.nombre}}</option>
+                </select>
+              </div>
+            </div>
+
+
+            <div class="form-row" *ngIf="buscar">
+              <div class="form-group">
+                <label class="formulario" for="filterTiProv">Tipo de Emprendimiento</label>
+                <select class="form-control custom-select" [(ngModel)]="formulario.codTipoProveedor"
+                  name="codTipoProveedor" [disabled]="formulario.codDepartamento === '' "
+                  (change)="limpiarBuscarnombre()" (change)="buscarProveedores()">
+                  <option hidden="tiprovs.tipoProveedor !== ''" disabled selected value="">Selecciona el tipo</option>
+                  <option selected value="">TODOS</option>
+                  <option *ngFor="let tiprovs of tipoproveedor" [value]="tiprovs.tipoProveedor">{{tiprovs.nombre}}
+                  </option>
+                </select>
+              </div>
+            </div>
+
+
+            <div class="form-row" *ngIf="buscar">
+              <div class="form-group">
+                <label class="formulario" for="especialidad">Especialidad</label>
+                <select class="form-control custom-select" [(ngModel)]="formulario.codTipoEspecialidad"
+                  name="codTipoEspecialidad"
+                  [disabled]="formulario.codTipoProveedor !==  'MEDI' && formulario.codTipoProveedor !==  'ODON'"
+                  (change)="limpiarBuscarnombre()" (change)="buscarProveedores()">
+                  <option hidden="especialidad.codEspecialidad !== ''" disabled selected value="">Selecciona la
+                    especialidad</option>
+                  <option selected value="">TODOS</option>
+                  <option *ngFor="let especialidad of especialidades" [value]="especialidad.codEspecialidad">
+                    {{especialidad.nombre}}
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="formulario" for="filterBusc">Buscar por nombre</label>
+                <input [disabled]="formulario.codDepartamento === '' " type="text"
+                  class="formulario form-control ui-widget ui-text" [(ngModel)]="formulario.nombreProveedor"
+                  name="nombreProveedor" maxlength="45" placeholder="Nombre del emprendedor"
+                  (ngModelChange)="buscarProveedores()">
+
+
+                <p></p>
+                <div class="form-group">
+                  <button (click)="limpiarFormulario()" type="submit" class="boton btn btn-info btn-lg btn-block"
+                    [disabled]="formulario.codDepartamento === '' ">
+                    Nueva búsqueda
+                  </button>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class="card-footer">
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <!-- PARTE DE LAS TARJETAS-->
+      <div class="col-md-7" *ngIf="buscar">
+
+        <app-emprendedorig [proveedor]="sucursalSeleccionada" (ocultarDetalle)="setShowDetalle( $event) "
+          *ngIf="mostrarDetalle">
+        </app-emprendedorig>
+
+        <div class="card-columns flex flex-row" *ngIf="!mostrarDetalle">
+          <app-emprendedor-tarjeta [sucursal]="sucursal" (eventoSucursalSeleccionada)="setSucursalSeleccionada( $event )"
+            (showDetalle)="setShowDetalle( $event)"
+            *ngFor="let sucursal of buscar.sucursales | paginate: { itemsPerPage: 12, currentPage: p }">
+          </app-emprendedor-tarjeta>
+        </div>
+
+        <pagination-controls *ngIf="!mostrarDetalle" class="paginacion my-pagination" maxSize="5"
+          (pageChange)="p = $event" [hidden]="buscar.codigo !== '01200'" previousLabel="◀"
+          screenReaderPaginationLabel="Pagination" nextLabel="▶">
+        </pagination-controls>
+
+
+
+        <div [hidden]="formulario.codDepartamento !== ''" class="alert alert-info alert-dismissible fade show"
+          role="alert">
+          <p>
+            <strong>Indicaciones de búsqueda</strong>
+          </p>
+          <p>
+            Selecciona el departamento en el formulario que se encuentra al lado izquierdo o arriba si utilizas
+            dispositivo móvil.
+          </p>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div *ngIf="buscar.codigo" [hidden]="buscar.codigo !== '01300' || buscar.codigo === ''  "
+          class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>No se encontraron el emprendedor con los criterios elegidos, </strong>
+          intenta otra combinación con el botón <strong><a class="nbusqueda" href="limpiarFormulario()"
+              (click)="limpiarFormulario()">Nueva búsqueda</a></strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div
+          *ngIf="formulario.codDepartamento &&  formulario.codTipoProveedor && formulario.codTipoEspecialidad && mensaje"
+          [hidden]="mensaje === 'nuevo' && formulario.codDepartamento === '' && formulario.codTipoProveedor === '' &&
+                        formulario.codTipoEspecialidad !== '' && formulario.codTipoProveedor !== 'MEDI' && formulario.codTipoProveedor !== 'ODON'"
+          class="alert alert-primary alert-dismissible fade show" role="alert">
+          <strong>¡Selecciona la opción "TODOS" en Tipo de Especialidad!</strong>
+          para que puedas consultar todas nuestras especialidades disponibles.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+
+
+      </div>
+      <div class="col-md-1">
+        <div>&nbsp;</div>
+      </div>
+
+    </div>
+
+  </form>
+</div>

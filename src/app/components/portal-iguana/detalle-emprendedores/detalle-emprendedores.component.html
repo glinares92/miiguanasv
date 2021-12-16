@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="card border-primary mb-3 carousel">
+    <div class="card-header">Emprendedores</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Listado de Emprendedores</h5>
+      <div class="my-2 text-left">
+        <button class="btn btn-rounded btn-primary" [routerLink]="['/detalle-emprendedores/formulario-emprendedor']">Crear Clientes</button>
+      </div> 
+
+      <div *ngIf="emprendedores?.length == 0"
+      class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Por el momento no se encuentra ningun Emprendedor para tu cuenta</strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+
+      <table class="table table-bordered table-striped" *ngIf="emprendedores?.length > 0" >
+        <thead>
+          <tr>
+            <th>nombre</th>
+            <th>apellido</th>
+            <th>negocio</th>
+            <th>telefono</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emprendedor of emprendedores">
+            <td>{{ emprendedor.nomEmp }}</td>
+            <td>{{ emprendedor.apeEmp }}</td>
+            <td>{{ emprendedor.nomNegocio }}</td>
+            <td>{{ emprendedor.telefono }}</td>
+            <td><button type="button" name="button" [routerLink]="['/detalle-emprendedores/formulario-emprendedor', emprendedor.codEmp]" routerLinkActive="router-link-active" 
+              class="btn btn-primary"
+              >editar</button></td>
+            <td>
+              <button type="button" class="btn btn-danger" name="eliminar" (click)='deleteEmprendedor(emprendedor)'> Eliminar</button>
+            </td>
+          </tr>
+        </tbody> 
+      </table>
+
+      <app-paginator *ngIf="paginador" [paginador] = "paginador">
+
+      </app-paginator>
+  
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="card shadow-lg mb-5  rounded animated fadeIn fast">
+  <!-- <img class="card-img-top" [src]="svproveedor.img" [alt]="svproveedor.nombre">  -->
+
+  <div class="card-body cardtexto ">
+
+    <h6 class="card-title cardtexto capitalize">{{sucursal.nombre | titlecase}}
+      <small><a *ngFor="let especi of sucursal.especialidades;">
+          <p></p>
+          <i class="especi_icon_card fas fa-stethoscope"></i> {{especi.nombre | titlecase}}&nbsp;&nbsp;
+        </a></small>
+    </h6>
+    <hr>
+    <span class="marcacard badge badge-primary"><a class="segmento"><i class="fas fa-hospital"></i>&nbsp;<i
+          class="fas fa-user-md"></i>&nbsp;<i class="fas fa-vials"></i><a class="capitalize">
+          {{sucursal.tipoProveedor }}</a></a></span>
+    <hr>
+    <div class="scroll">
+      <p class="card-text cardtextoleft">
+        <i class="fascard fas fa-phone-square" aria-hidden="true"></i>
+        &nbsp;<a href="tel:{{sucursal.numTel1}}">{{sucursal.numTel1}}</a>
+        &nbsp;<a href="tel:{{sucursal.numTel2}}">{{sucursal.numTel2}}</a>
+        &nbsp;<a href="tel:{{sucursal.numCel1}}">{{sucursal.numCel1}}</a>
+        &nbsp;<a href="tel:{{sucursal.numFax}}">{{sucursal.numFax}}</a>
+      </p>
+      <p *ngIf="sucursal.numCel2" class="card-text cardtextoleft"><a
+          href="https://api.whatsapp.com/send?phone={{sucursal.numCel2}}" target="_blank"><i
+            class="whatsappp fab fa-whatsapp-square"></i>&nbsp;{{sucursal.numCel2}}</a></p>
+      <p *ngIf="sucursal?.email1" class="card-text cardtextoleft"><i
+          class="fascard fas fa-envelope-open"></i><b>&nbsp;</b><a
+          href="mailto:{{sucursal.email1}}">{{sucursal.email1}}</a></p>
+      <p *ngIf="sucursal?.email2" class="card-text cardtextoleft"><i
+          class="fascard fas fa-envelope-open"></i><b>&nbsp;</b><a
+          href="mailto:{{sucursal.email2}}">{{sucursal.email2}}</a></p>
+      <p class="card-text cardtextoleft"><i
+          class="fascard fas fa-map-marker-alt"></i><b>&nbsp;</b>{{sucursal.direccion | titlecase}}</p>
+      <p *ngIf="sucursal.horario" class="card-text cardtextoleft"><i
+          class="fascard far fa-clock"></i><b>&nbsp;</b>{{sucursal.horario}}</p>
+    </div>
+    <!-- <div *ngFor="let especi of sucursal.especialidad;"><li>{{especi.nombre}}</li></div> -->
+  </div>
+  <div class="card-footer">
+    <!-- <button (click)="detalleProveedor(sucursal)" [frmBuscar]="formulario"  (eventoRegresar)="setFormulario( $event )"  class="vermas btn btn-primary btn-lg btn-block"> -->
+    <button (click)="detalleProveedor()" [ngx-scroll-to]="'destination'" [ngx-scroll-to-offset]="215"
+      class="vermas btn btn-primary btn-lg btn-block">
+      <!-- <button (click)="detalleProveedor(sucursal)" class="vermas btn btn-primary btn-lg btn-block"> -->
+      Ver más
+    </button>
+  </div>
+</div>

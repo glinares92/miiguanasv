@@ -1,0 +1,87 @@
+<div class="container">
+  <button id="destination" #destinationRef (click)="regresar()" class="regresar btn btn-info "> <i
+      class="fas fa-arrow-left"></i></button>
+  <h5><small>
+      <span class="marcacard badge badge-primary"><i class="fas fa-hospital"></i>&nbsp;<i
+          class="fas fa-user-md"></i>&nbsp;<i class="fas fa-vials"></i>&nbsp;
+        {{proveedores?.sucursal?.tipoProveedor}}</span></small></h5>
+
+  <p>
+    <div class="card">
+      <h5 class="primario colorsecundario card-header"><i class="iconos  fas fa-user-md"></i>
+        <b>&nbsp;&nbsp;</b>{{proveedores?.sucursal?.nombre | titlecase}}&nbsp;&nbsp;
+        <small><a *ngFor="let especialidad of proveedores?.sucursal?.especialidades"> | <i
+              class="especi_icon fas fa-stethoscope"></i> {{especialidad?.nombre | titlecase}}&nbsp;&nbsp;</a></small>
+      </h5>
+
+      <div class="card-body">
+        <div class="card-columns">
+          <!-- <img class="card-img-top " [src]="svproveedor.img" [alt]="svproveedor.nombre"> -->
+        </div>
+
+        <p class="card-text"><i class="fastel fas fa-phone-square" aria-hidden="true"></i><b> Telefono: </b>
+          <a href="tel:{{proveedores?.sucursal?.numTel1}}">{{proveedores?.sucursal?.numTel1}}</a>
+          &nbsp;<a href="tel:{{proveedores?.sucursal?.numTel2}}">{{proveedores?.sucursal?.numTel2}}</a>
+          &nbsp;<a href="tel:{{proveedores?.sucursal?.numCel1}}">{{proveedores?.sucursal?.numCel1}}</a>
+          &nbsp;<a href="tel:{{proveedores?.sucursal?.numFax}}">{{proveedores?.sucursal?.numFax}}</a>
+        </p>
+        <p *ngIf="proveedores?.sucursal?.numCel2" class="card-text"><i class="whatsappp fab fa-whatsapp-square"
+            aria-hidden="true"></i><b> WhatsApp: </b>
+          <a href="https://api.whatsapp.com/send?phone={{proveedores?.sucursal?.numCel2}}"
+            target="_blank">{{proveedores?.sucursal?.numCel2}}</a></p>
+        <p *ngIf="proveedores?.sucursal?.email1" class="card-text"><i class="fasemail fas fa-envelope-open"></i><b>
+            Email: </b><a href="mailto:{{proveedores?.sucursal?.email1}}">{{proveedores?.sucursal?.email1}}</a></p>
+        <p *ngIf="proveedores?.sucursal?.email2" class="card-text"><i class="fasemail fas fa-envelope-open"></i><b>
+            Email: </b><a href="mailto:{{proveedores?.sucursal?.email2}}">{{proveedores?.sucursal?.email2}}</a></p>
+        <p class="card-text"><i class="fasdir fas fa-map-marker-alt"></i><b> Dirección:
+          </b>{{proveedores?.sucursal?.direccion | titlecase}}</p>
+        <p *ngIf="proveedores?.sucursal?.horario" class="card-text"><i class="fascard far fa-clock"></i><b> Horario:
+            &nbsp;</b>{{proveedores?.sucursal?.horario}}</p>
+        <span class="badge badge-success"><i class="fas fa-map-signs"></i><b> Zona:
+          </b>{{proveedores?.sucursal?.zona}}</span>
+        <br>
+        <br>
+        <div *ngIf="proveedores?.sucursal?.longitud" class="card">
+          <h5 class="primario colorsecundario card-header"><i class="iconos  fas fa-map-marked-alt"></i> Localización
+            para {{proveedores?.sucursal?.nombre | titlecase}}</h5>
+          <agm-map [latitude]="proveedores?.sucursal?.longitud" [longitude]="proveedores?.sucursal?.latitud"
+            [zoom]='proveedores?.sucursal?.zoom'>
+
+            <agm-marker [latitude]="proveedores?.sucursal?.longitud" [longitude]="proveedores?.sucursal?.latitud"
+              [iconUrl]="proveedores?.sucursal?.pin">
+              <agm-marker [latitude]="lati"
+            [longitude]="longi" [iconUrl]="pin2">
+            <agm-info-window>
+              <strong>
+                <i class="fa fa-phone-square" aria-hidden="true"></i><b>Aqui me encuentro</b><br>
+              </strong>
+            </agm-info-window>
+          </agm-marker>
+              <agm-info-window>
+                <strong>
+                  <p><i class="fas fa-hospital"></i><b> Proveedor: </b>{{proveedores?.sucursal?.nombre}}</p>
+                  <p><i class="fas fa-phone-square" aria-hidden="true"></i><b> Telefono: </b>
+                    <a href="tel:{{proveedores?.sucursal?.numTel1}}">{{proveedores?.sucursal?.numTel1}}</a>
+                    &nbsp;<a href="tel:{{proveedores?.sucursal?.numTel2}}">{{proveedores?.sucursal?.numTel2}}</a>
+                    &nbsp;<a href="tel:{{proveedores?.sucursal?.numCel1}}">{{proveedores?.sucursal?.numCel1}}</a>
+                    &nbsp;<a href="tel:{{proveedores?.sucursal?.numFax}}">{{proveedores?.sucursal?.numFax}}</a>
+                  </p>
+                  <p *ngIf="proveedores?.sucursal?.numCel2"><i class="fab fa-whatsapp-square" aria-hidden="true"></i><b>
+                      WhatsApp: </b>
+                    <a href="https://api.whatsapp.com/send?phone={{proveedores?.sucursal?.numCel2}}"
+                      target="_blank">{{proveedores?.sucursal?.numCel2}}</a></p>
+                  <p *ngIf="proveedores?.sucursal?.email"><i class="fas fa-envelope-open"></i><b> Email: </b><a
+                      href="mailto:{{proveedores?.sucursal?.email}}">{{proveedores?.sucursal?.email}}</a></p>
+                  <p><i class="fas fa-map-marked-alt"></i><b> Dirección:
+                    </b>{{proveedores?.sucursal?.direccion | titlecase}}</p>
+                </strong>
+              </agm-info-window>
+            </agm-marker>
+          </agm-map>
+
+        </div>
+
+      </div>
+    </div>
+
+</div>

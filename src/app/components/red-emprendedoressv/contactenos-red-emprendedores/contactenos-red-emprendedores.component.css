@@ -1,0 +1,61 @@
+.container{
+  margin-top: -4px;
+  margin-bottom: 70px;
+}
+
+agm-map{
+  height: 580px !important;
+
+}
+
+.chtitulo{
+  font-size: 27px;
+}
+
+.banner{
+  margin-top: 66px;
+}
+
+.regresar{
+  background-color: #01adf0;
+  border-color: #01adf0;
+}
+
+.marcacard{
+  background-color: #01adf0;
+}
+
+.area{
+   background-color: #01adf0
+}
+
+
+.fastitulo{
+color: #34495e;
+font-size: 28px;
+}
+
+.fastel{
+  color: #34495e;
+  font-size: 18px;
+}
+
+.fasemail{
+  color: #34495e;
+  font-size: 18px;
+}
+
+.fasdir{
+color: #34495e;
+font-size: 18px;
+}
+
+.fasmapa{
+  color: #34495e;
+  font-size: 28px;
+}
+
+.card-text{
+  color: #34495e;
+}
+
