@@ -17,7 +17,7 @@ export const environment = {
 
   miiguana: {
     conectar: 'https://dockerapi-miiguana.azurewebsites.net/oauth/token',
-    departamentos: 'https://dockerapi-miiguana.azurewebsites.net/api/sv/departame',
+    departamentos: 'https://dockerapi-miiguana.azurewebsites.net/api/sv/departamentos',
     rubro: 'https://dockerapi-miiguana.azurewebsites.net/api/sv/negocios',
     emprendedores: 'https://dockerapi-miiguana.azurewebsites.net/api/sv/emprendedores',
     crearempr: 'https://dockerapi-miiguana.azurewebsites.net/api/sv/emprendedores',
@@ -74,8 +74,8 @@ export const environment = {
 
 
   sisa: {
-    conectar: 'https://www.sisa.com.sv/SISAServiceRest/api/v1/conec',
-    getDepartamento: 'https://www.sisa.com.sv/SISAServiceRest/api/v1/departam',
+    conectar: 'https://www.sisa.com.sv/SISAServiceRest/api/v1/conectar',
+    getDepartamento: 'https://www.sisa.com.sv/SISAServiceRest/api/v1/departamentos',
     getTipoproveedor: 'https://www.sisa.com.sv/SISAServiceRest/api/v1/tipoproveedor',
     getEspecialidada: 'https://www.sisa.com.sv/SISAServiceRest/api/v1/especialidades',
     getBuscar: 'https://www.sisa.com.sv/SISAServiceRest/api/v1/proveedor/buscar',
