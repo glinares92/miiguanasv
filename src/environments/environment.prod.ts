@@ -17,7 +17,9 @@ export const environment = {
   },
 
 
-
+  nodeEnvios: {
+    correo: "https://intv1-prod.herokuapp.com/sendmail"
+  },
 
 
 

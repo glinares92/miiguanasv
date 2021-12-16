@@ -3,6 +3,7 @@ import { HttpService } from "src/app/services/http.service";
 import { FormControl, Validators } from "@angular/forms";
 import Swal from "sweetalert2";
 import { Router } from "@angular/router";
+import { environment } from "src/environments/environment";
 
 @Component({
   selector: 'envio-mail',
@@ -56,7 +57,7 @@ export class EnvioMailComponent implements OnInit {
       cuerpo: this.cuerpoFormControl.value,
       tipo: 'informacion'
     }
-    this.http.sendEmailSms("https://intv1-prod.herokuapp.com/sendmail", user).subscribe(
+    this.http.sendEmailSms(environment.nodeEnvios.correo, user).subscribe(
       data => {
         let res:any = data; 
         console.log(

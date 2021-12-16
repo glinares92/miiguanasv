@@ -4,6 +4,7 @@ import { Registrar } from 'src/app/model/registrar';
 import { Usuario } from 'src/app/model/usuario';
 import { HttpService } from "src/app/services/http.service";
 import { MiIguanaService } from 'src/app/services/miiguanasv.service';
+import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -63,7 +64,7 @@ buttionText = "Submit";
       tipo: 'registro',
       telefono: this.registrar.telefono 
     }
-    this.http.sendEmailSms("https://intv1-prod.herokuapp.com/sendmail", user).subscribe(
+    this.http.sendEmailSms(environment.nodeEnvios.correo, user).subscribe( 
       data => {
         let res:any = data; 
         console.log(
