@@ -46,7 +46,7 @@ export class AuthService {
     params.set('grant_type', 'password');
     params.set('username', usuario.username);
     params.set('password', usuario.password);
-    console.log(params.toString());
+    // console.log(params.toString());
     
     return this.http.post<any>(environment.miiguana.conectar, params.toString(), {headers: httpHeaders});
   }
@@ -60,6 +60,7 @@ export class AuthService {
     this._usuario.email = payload.email;
     this._usuario.nombrenegocio = payload.nombrenegocio;
     this._usuario.telefono = payload.telefono;
+    this._usuario.tipoemprendedor = payload.tipoemprendedor;
 
     sessionStorage.setItem('usuario',JSON.stringify(this._usuario));
   }
@@ -80,7 +81,8 @@ export class AuthService {
 
   isAuthenticated(): boolean{
     let payload = this.obtenerDatosToken(this.token);
-
+    // console.log(payload.user_name);
+    
     if(payload != null && payload.user_name && payload.user_name.length>0){
       return true;
     }

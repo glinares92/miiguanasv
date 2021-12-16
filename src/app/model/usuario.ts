@@ -10,6 +10,7 @@ export class Usuario {
     email: string;
     telefono: string;
     nombrenegocio: string;
+    tipoemprendedor: string;
     // roles: Roles[];
 
     // constructor() {

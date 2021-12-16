@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'redemprendedores', component: InicioRedEmprendedorComponent },
   { path: 'donacion', component: DonacionesComponent },
   { path: 'estoy-aqui', component: DondeEstoyComponent },
-  { path: 'lista', component: ListaArticuloComponent },
+  // { path: 'lista', component: ListaArticuloComponent },
   { path: 'detalle/:id', component: DetalleArticuloComponent },
 
   { path: 'detalle-emprendedores', component: DetalleEmprendedoresComponent },
