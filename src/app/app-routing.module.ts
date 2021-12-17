@@ -13,6 +13,7 @@ import { DetalleUsuariosComponent } from './components/portal-iguana/detalle-usu
 import { ListaArticuloComponent } from './components/portal-iguana/stripe/articulo/lista-articulo.component';
 import { DetalleArticuloComponent } from './components/portal-iguana/stripe/articulo/detalle-articulo.component';
 import { DonacionesComponent } from './components/donaciones/donaciones.component';
+import { OfertasComponent } from './components/ofertas/ofertas.component';
 
 
 
@@ -20,6 +21,8 @@ const routes: Routes = [
   { path: 'redemprendedores', component: InicioRedEmprendedorComponent },
   { path: 'donacion', component: DonacionesComponent },
   { path: 'estoy-aqui', component: DondeEstoyComponent },
+  { path: 'ofertas', component: OfertasComponent },
+
   // { path: 'lista', component: ListaArticuloComponent },
   { path: 'detalle/:id', component: DetalleArticuloComponent },
 

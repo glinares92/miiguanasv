@@ -43,6 +43,7 @@ import { PaymentComponent } from './components/portal-iguana/stripe/payment/paym
 import { ListaArticuloComponent } from './components/portal-iguana/stripe/articulo/lista-articulo.component';
 import { DetalleArticuloComponent } from './components/portal-iguana/stripe/articulo/detalle-articulo.component';
 import { DonacionesComponent } from './components/donaciones/donaciones.component';
+import { OfertasComponent } from './components/ofertas/ofertas.component';
 
 
 
@@ -72,6 +73,7 @@ import { DonacionesComponent } from './components/donaciones/donaciones.componen
     ListaArticuloComponent,
     DetalleArticuloComponent,
     DonacionesComponent,
+    OfertasComponent,
     
   ],
   imports: [

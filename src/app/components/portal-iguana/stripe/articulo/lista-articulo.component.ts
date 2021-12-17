@@ -13,7 +13,7 @@ export class ListaArticuloComponent implements OnInit {
   constructor( private articuloService: ArticuloService) { }
 
   ngOnInit() {
-    this.cargarLista();
+    this.cargarLista(); 
   }
 
   cargarLista():void{

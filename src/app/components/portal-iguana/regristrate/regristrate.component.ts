@@ -7,6 +7,7 @@ import { MiIguanaService } from 'src/app/services/miiguanasv.service';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 
+
 @Component({
   selector: 'app-regristrate',
   templateUrl: './regristrate.component.html',
@@ -23,16 +24,20 @@ loading = false;
 buttionText = "Submit";
   public usuario: Usuario = new Usuario();
   public registrar: Registrar = new Registrar();
+  text_val:any="1234";
 
   usuarios: Usuario[];
 
   constructor( public miiguanaService: MiIguanaService, private reouter: Router,
     private activatedRoute: ActivatedRoute, public http: HttpService
     ) {
-      this.usuarios
+      this.usuarios;
+      
    }
 
   ngOnInit() { 
+
+    
 
     console.log(this.http.test);
 
@@ -51,7 +56,9 @@ buttionText = "Submit";
 
   
   public registrarUsuario():void{
+    this.registrar.tipoemprendedor = '0';
     this.registrar.enabled = 1;
+    this.registrar.password =  '$2a$10$DU61tNQCVaxSr8.ryj7Yuu4RqUqa7vvCvkTt31MdZQH73dOzGRlwG';
     this.miiguanaService.registrarusuario(this.registrar).subscribe(
       
     )    

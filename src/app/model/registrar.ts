@@ -9,6 +9,7 @@ export class Registrar {
     email: string;
     telefono: string;
     nombrenegocio: string;
+    tipoemprendedor: string;
     roles: Roles[];
 
     constructor() {
